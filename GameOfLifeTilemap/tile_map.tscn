@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://4evy0fpkiim3"]
+
+[ext_resource type="Texture2D" uid="uid://dc5i6dcbvrc8b" path="res://icon.svg" id="1_geafi"]
+[ext_resource type="Script" path="res://tile_map.gd" id="2_0plrn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ysfxb"]
+texture = ExtResource("1_geafi")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/modulate = Color(0, 0, 0, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cbt8"]
+texture = ExtResource("1_geafi")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7qw5s"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_ysfxb")
+sources/1 = SubResource("TileSetAtlasSource_0cbt8")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_7qw5s")
+format = 2
+script = ExtResource("2_0plrn")
+width = 96
+height = 54
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.16, 0.16)
